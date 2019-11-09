@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ProyectoTravelCan_1.Models;
 
-namespace ProyectoTravelCan_1.Controllers
+namespace ProyectoTravelCan.Controllers
 {
     public class HomeController : Controller
     {

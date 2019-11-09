@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <RootNamespace>ProyectoTravelCan_1</RootNamespace>
+    <RootNamespace>ProyectoTravelCan</RootNamespace>
   </PropertyGroup>
 
 

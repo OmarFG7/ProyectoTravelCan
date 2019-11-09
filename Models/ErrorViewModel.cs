@@ -1,6 +1,6 @@
 using System;
 
-namespace ProyectoTravelCan_1.Models
+namespace ProyectoTravelCan.Models
 {
     public class ErrorViewModel
     {
