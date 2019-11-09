@@ -4,10 +4,10 @@ namespace ProyectoTravelCan.Models
 {
     public class Perro
     {
-        public int MascotaId { get; set; }
+        public int Id { get; set; }
         
         [Required]
-        public string nombreMascota { get; set; }
+        public string NombreMascota { get; set; }
 
         [Required]
         public string Raza { get; set; }
@@ -17,12 +17,13 @@ namespace ProyectoTravelCan.Models
 
         [Required]
         public int Edad { get; set; }
-
+        [Required]
         public string Foto { get; set; }
-
+        [Required]
         public string Descripcion { get; set; }   
-
-        public string CartillaSanitaria  { get; set; }     
+        [Required]
+        public string CartillaSanitaria { get; set; }
+   
     }
 
     

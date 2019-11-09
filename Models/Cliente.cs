@@ -5,13 +5,10 @@ namespace ProyectoTravelCan.Models
 {
     public class Cliente
     {
-        public int DniId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public string nombresCliente { get; set; }
-
-        [Required]
-        public string apellidosCliente { get; set; }
+        public string Nombres { get; set; }
 
         [Required]
         public DateTime FechaNacimiento { get; set; }
@@ -20,15 +17,13 @@ namespace ProyectoTravelCan.Models
 
             }
 
-        public string Telefono { get; set; }
-
         [Required]
         public string Celular { get; set; }
 
         [Required]
         public string  Correo { get; set; }
-
-
+        public Perro perro{get;set;}
+        public int IdMascota{get;set;}
 
 
     }
