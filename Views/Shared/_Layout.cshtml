@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ProyectoTravelCan_1</title>
+    <title>@ViewData["Title"] - ProyectoTravelCan</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -21,18 +21,17 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ProyectoTravelCan_1</a>
+                <a class="navbar-brand"  asp-controller="Home" asp-action="Index">
+                    <img src="https://scontent.flim5-2.fna.fbcdn.net/v/t1.0-9/17634794_397141313976375_3629058755435222411_n.jpg?_nc_cat=101&_nc_oc=AQmZ48y7ulqfEWubHHXui8xVuwQcB5xCW4vzPOfaja1S78-qbWpjYj9zUPkGbu2JqIk&_nc_ht=scontent.flim5-2.fna&oh=76347c39238008fedf2df4134b23eb6a&oe=5E657847" width="30" height="30">
+                    TravelCan</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1">                
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AcercaDe">A cerca de nosotros</a>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +47,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - ProyectoTravelCan_1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2019 - TravelCan - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 

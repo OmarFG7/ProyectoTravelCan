@@ -1,3 +1,5 @@
+using System;
+
 namespace ProyectoTravelCan.Models
 {
     public class ReservaViaje
@@ -14,7 +16,7 @@ namespace ProyectoTravelCan.Models
 
         public float Costo { get; set; }
 
-        public DateTi { get; set; }
+        public DateTime fecha { get; set; }
 
 
     }

@@ -31,8 +31,8 @@ namespace ProyectoTravelCan
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<"NOMBRE DE DBCONTEX"> (x => x.useMySql);
-            services.AddIdentity<Usuario,IdentityEntityRole>;
+           // services.AddDbContext<"NOMBRE DE DBCONTEX"> (x => x.useMySql);
+           // services.AddIdentity<Usuario,IdentityEntityRole>;
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
