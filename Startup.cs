@@ -35,7 +35,7 @@ namespace ProyectoTravelCan
 
            // services.AddDbContext<"NOMBRE DE DBCONTEX"> (x => x.useMySql);
            // services.AddIdentity<Usuario,IdentityEntityRole>;
-            services.AddDbContext<Contexto>(o=>o.UseMySql("server=localhost;database=proyecto;user=root;password=;"));
+            services.AddDbContext<Contexto>(o=>o.UseMySql("server=localhost;database=travelcan;user=root;password=;"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

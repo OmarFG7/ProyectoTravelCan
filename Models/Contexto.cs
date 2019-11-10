@@ -13,5 +13,13 @@ namespace ProyectoTravelCan.Models
         public Contexto(DbContextOptions<Contexto> o) : base(o){
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            
+
+            modelBuilder.Entity<ReservaViaje>().HasKey(p => new { p.IdCliente, p.IdViaje });
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
