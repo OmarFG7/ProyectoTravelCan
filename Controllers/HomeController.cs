@@ -75,11 +75,30 @@ namespace ProyectoTravelCan.Controllers
             if(ModelState.IsValid){
                 _c.Add(r);
                 _c.SaveChanges();
-                TempData["mensaje"] = "La Reserva fue registrada satisfactoriamente";
-                return RedirectToAction("Index");
+                return RedirectToAction("Tarjeta");
             }
             return View(r);
         }
+        public IActionResult Tarjeta( ){
+            return View();
+         }
+        [HttpPost]
+         public IActionResult Tarjeta(Tarjeta t){
+            if(ModelState.IsValid){
+                _c.Add(t);
+                _c.SaveChanges();
+                TempData["mensaje"] = "La Reserva fue registrada satisfactoriamente";
+                return RedirectToAction("Index");
+                
+                }
+                return View(t);
+         }
 
+        public IActionResult Experiencias(){
+            var Reseñas =_c.Reseñas.ToList();
+
+            return View(Reseñas);
+            
+        }
     }
 }

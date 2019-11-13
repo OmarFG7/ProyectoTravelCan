@@ -1,0 +1,15 @@
+@model List<Reseña>
+    <div class="row">
+
+    @foreach(var v in Model){
+        
+        <div class="col-6">
+        <img height="350" width="550" src="@v.Foto" alt="">
+        <p>@v.Descripcion</p>
+        <p><strong>BY: @v.CorreoUsuario</strong></p>
+        </div>
+        
+        
+
+    }
+    </div>
