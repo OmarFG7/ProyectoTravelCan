@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoTravelCan.Models;
 
 namespace ProyectoTravelCan.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20191111123803_IncluidoReseña")]
+    partial class IncluidoReseña
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,6 +71,9 @@ namespace ProyectoTravelCan.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
+
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -107,6 +112,8 @@ namespace ProyectoTravelCan.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -247,13 +254,17 @@ namespace ProyectoTravelCan.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CorreoUsuario");
-
                     b.Property<string>("Descripcion");
 
                     b.Property<string>("Foto");
 
+                    b.Property<int?>("IdU");
+
+                    b.Property<string>("UsuarioId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Reseñas");
                 });
@@ -282,6 +293,22 @@ namespace ProyectoTravelCan.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Viajes");
+                });
+
+            modelBuilder.Entity("PortalNoticias.Models.Usuario", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Correo")
+                        .IsRequired();
+
+                    b.Property<string>("Password1")
+                        .IsRequired();
+
+                    b.Property<string>("Password2")
+                        .IsRequired();
+
+                    b.HasDiscriminator().HasValue("Usuario");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -334,6 +361,13 @@ namespace ProyectoTravelCan.Migrations
                     b.HasOne("ProyectoTravelCan.Models.Perro", "perro")
                         .WithMany()
                         .HasForeignKey("PerroId");
+                });
+
+            modelBuilder.Entity("ProyectoTravelCan.Models.Reseña", b =>
+                {
+                    b.HasOne("PortalNoticias.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId");
                 });
 #pragma warning restore 612, 618
         }

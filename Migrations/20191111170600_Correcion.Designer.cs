@@ -9,8 +9,8 @@ using ProyectoTravelCan.Models;
 namespace ProyectoTravelCan.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20191110133745_BdInicial")]
-    partial class BdInicial
+    [Migration("20191111170600_Correcion")]
+    partial class Correcion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -192,11 +192,11 @@ namespace ProyectoTravelCan.Migrations
                     b.Property<string>("Nombres")
                         .IsRequired();
 
-                    b.Property<int?>("perroId");
+                    b.Property<int?>("PerroId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("perroId");
+                    b.HasIndex("PerroId");
 
                     b.ToTable("Clientes");
                 });
@@ -244,6 +244,22 @@ namespace ProyectoTravelCan.Migrations
                     b.ToTable("Reservas");
                 });
 
+            modelBuilder.Entity("ProyectoTravelCan.Models.Reseña", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CorreoUsuario");
+
+                    b.Property<string>("Descripcion");
+
+                    b.Property<string>("Foto");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reseñas");
+                });
+
             modelBuilder.Entity("ProyectoTravelCan.Models.Viaje", b =>
                 {
                     b.Property<int>("Id")
@@ -253,6 +269,8 @@ namespace ProyectoTravelCan.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired();
+
+                    b.Property<DateTime>("Fecha");
 
                     b.Property<string>("Foto")
                         .IsRequired();
@@ -317,7 +335,7 @@ namespace ProyectoTravelCan.Migrations
                 {
                     b.HasOne("ProyectoTravelCan.Models.Perro", "perro")
                         .WithMany()
-                        .HasForeignKey("perroId");
+                        .HasForeignKey("PerroId");
                 });
 #pragma warning restore 612, 618
         }

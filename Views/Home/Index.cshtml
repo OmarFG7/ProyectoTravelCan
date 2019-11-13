@@ -1,12 +1,18 @@
-﻿@{
+﻿@model List<Viaje>
+@{
     ViewData["Title"] = "Home Page";
+}
+@if (TempData["mensaje"] != null) {
+    <div class="alert alert-success">
+        @TempData["mensaje"]
+    </div>
 }
 
 <div class="text-center">
     <h1 class="display-4">Bienvenido</h1>
 </div>
 
-<div class="bd-example">
+<div class="bd-example">        
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -57,3 +63,42 @@
       </a>
     </div>
   </div>
+<h2>Proximos Viajes</h2>
+<div class="row">
+  <div class="col-6">
+    <div class="card" style="width: 30rem;">
+      @foreach (var v in Model)
+      {
+      <img src="@v.Foto" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">@v.Descripcion</h5>
+        <p class="card-text">Precio:S/.@v.Costo por persona</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Salida: @v.nombrePartida</li>
+        <li class="list-group-item">Destino: @v.nombreDestino</li>
+        <li class="list-group-item">Fecha: @v.Fecha</li>
+      </ul>
+      <div class="card-body">
+        <a asp-action="ReservarViaje" class="card-link">Somos</a>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="col-6">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+  </div>
+
+  <h2>Comparte tu experiencia</h2>
+  <div class="form-group">
+    <label >Descripcion</label>
+    <textarea  cols="50" rows="5"></textarea>
+  </div>
+</div>

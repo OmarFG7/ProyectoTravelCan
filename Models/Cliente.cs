@@ -24,6 +24,8 @@ namespace ProyectoTravelCan.Models
         public string  Correo { get; set; }
         public Perro perro{get;set;}
 
+        public int? PerroId {get;set;}
+
 
     }
 }

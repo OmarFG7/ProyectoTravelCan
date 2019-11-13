@@ -1,0 +1,40 @@
+@model Perro
+
+<h1>Registra a tu Mascota</h1>
+<form action="" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nombre </label>
+          <input asp-for="NombreMascota" placeholder="Ingrese Nombre de su mascota" class="form-control">
+          <small id="emailHelp" class="form-text text-muted">Será necesario para incluir en la lista</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Raza</label>
+          <input asp-for="Raza" class="form-control" id="exampleInputPassword1" placeholder="Raza">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Sexo</label>
+            <input asp-for="Sexo" class="form-control" id="exampleInputPassword1" placeholder="Sexo">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Edad</label>
+            <input asp-for="Edad" class="form-control" id="exampleInputPassword1" placeholder="Edad">
+        </div>
+        <div class="form-group">
+        <label for="exampleInputPassword1">Foto</label>
+        <input asp-for="Foto" class="form-control" id="exampleInputPassword1" placeholder="Foto">
+        <small id="emailHelp" class="form-text text-muted">Link de foto</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Descripcion</label>
+            <textarea asp-for="Descripcion" cols="50" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+                <label for="exampleInputPassword1">CartillaSanitaria</label>
+                <input asp-for="CartillaSanitaria" class="form-control" id="exampleInputPassword1" placeholder="CartillaSanitaria">
+                <small id="emailHelp" class="form-text text-muted">Foto de cartilla(Link)</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+

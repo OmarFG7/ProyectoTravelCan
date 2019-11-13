@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoTravelCan.Models
@@ -15,5 +16,10 @@ namespace ProyectoTravelCan.Models
         public string nombreDestino { get; set; }
         [Required]
         public float Costo { get; set; }
+        public DateTime Fecha { get; set; }
+        public Viaje (){
+                DateTime Fecha = DateTime.Now;
+
+        }
     }
 }

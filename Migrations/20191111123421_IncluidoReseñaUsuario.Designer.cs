@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoTravelCan.Models;
 
 namespace ProyectoTravelCan.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20191111123421_IncluidoReseñaUsuario")]
+    partial class IncluidoReseñaUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,22 +242,6 @@ namespace ProyectoTravelCan.Migrations
                     b.HasKey("IdCliente", "IdViaje");
 
                     b.ToTable("Reservas");
-                });
-
-            modelBuilder.Entity("ProyectoTravelCan.Models.Reseña", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CorreoUsuario");
-
-                    b.Property<string>("Descripcion");
-
-                    b.Property<string>("Foto");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Reseñas");
                 });
 
             modelBuilder.Entity("ProyectoTravelCan.Models.Viaje", b =>

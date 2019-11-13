@@ -89,7 +89,8 @@ namespace ProyectoTravelCan.Migrations
                     Descripcion = table.Column<string>(nullable: false),
                     nombrePartida = table.Column<string>(nullable: false),
                     nombreDestino = table.Column<string>(nullable: false),
-                    Costo = table.Column<float>(nullable: false)
+                    Costo = table.Column<float>(nullable: false),
+                    Fecha = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -212,14 +213,14 @@ namespace ProyectoTravelCan.Migrations
                     FechaNacimiento = table.Column<DateTime>(nullable: false),
                     Celular = table.Column<string>(nullable: false),
                     Correo = table.Column<string>(nullable: false),
-                    perroId = table.Column<int>(nullable: true)
+                    PerroId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Clientes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Clientes_Perros_perroId",
-                        column: x => x.perroId,
+                        name: "FK_Clientes_Perros_PerroId",
+                        column: x => x.PerroId,
                         principalTable: "Perros",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -263,9 +264,9 @@ namespace ProyectoTravelCan.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Clientes_perroId",
+                name: "IX_Clientes_PerroId",
                 table: "Clientes",
-                column: "perroId");
+                column: "PerroId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

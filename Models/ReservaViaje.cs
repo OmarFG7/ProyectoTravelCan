@@ -8,7 +8,6 @@ namespace ProyectoTravelCan.Models
 {
     public class ReservaViaje
     {
-       
         
         [Key,Column(Order =0)]
         public int IdCliente { get; set; }
@@ -18,7 +17,7 @@ namespace ProyectoTravelCan.Models
         [Required]
         public DateTime Fecha { get; set; }
         public ReservaViaje (){
-                DateTime Fecha = DateTime.Now;
+                Fecha = DateTime.Now;
 
         }
         
