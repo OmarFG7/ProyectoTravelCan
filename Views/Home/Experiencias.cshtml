@@ -1,0 +1,20 @@
+@model List<Reseña>
+        @if (TempData["mensaje"] != null) {
+            <div class="alert alert-success">
+                @TempData["mensaje"]
+            </div>
+        }
+<div class="row">
+    @foreach(var v in Model){
+    <div class="col-6">
+        <div class="card" style="width: 30rem; ">    
+            <img class="card-img-top" height="350" width="550" src="@v.Foto" alt="">
+            <p class="card-text">@v.Descripcion</p>
+            <p><strong>BY: @v.CorreoUsuario</strong></p>
+        </div>
+    </div>
+    }
+</div>
+<a asp-controller="Cuenta" asp-action="RegistrarExperiencia" class="badge badge-secondary">Cuentanos tu experiencia</a>
+
+

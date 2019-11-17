@@ -22,40 +22,6 @@ namespace PortalNoticias.Controllers
             _um = um;
             _rm = rm;
         }
-
-        public IActionResult AsociarRol()
-        {
-            ViewBag.Usuarios = _um.Users.ToList();
-            ViewBag.Roles = _rm.Roles.ToList();
-
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult AsociarRol(string usuario, string rol) {
-            var user = _um.FindByIdAsync(usuario).Result;
-
-            var resultado = _um.AddToRoleAsync(user, rol).Result;
-
-            return RedirectToAction("index", "home");
-        }
-
-        public IActionResult CrearRol()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult CrearRol(string nombre)
-        {
-            var rol = new IdentityRole();
-            rol.Name = nombre;
-
-            var resultado = _rm.CreateAsync(rol).Result;
-
-            return RedirectToAction("index", "home");
-        }
-
         public IActionResult Crear() {
             return View();
         }
@@ -77,7 +43,8 @@ namespace PortalNoticias.Controllers
 
 
                 if (resultado.Succeeded) {
-                    return RedirectToAction("index", "home");
+                    TempData["mensaje"] = "Inicie Sesion";
+                    return RedirectToAction("Login", "Cuenta");
                 }
                 else {
                     foreach (var item in resultado.Errors)
@@ -103,7 +70,7 @@ namespace PortalNoticias.Controllers
                 var resultado = _sim.PasswordSignInAsync(model.Correo, model.Password, true, false).Result;
 
                 if (resultado.Succeeded) {
-                    return RedirectToAction("index", "home");
+                    return RedirectToAction("Experiencias", "home");
                 }
                 else {
                     
@@ -118,6 +85,25 @@ namespace PortalNoticias.Controllers
             _sim.SignOutAsync();
 
             return RedirectToAction("index", "home");
+        }
+        public IActionResult RegistrarExperiencia() {
+            if(!User.IsInRole("Usuario")){
+                TempData["mensaje"] = "Inicie Sesion";
+                return RedirectToAction("Login");
+            }else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public IActionResult RegistrarExperiencia(Reseña r) {
+            if(ModelState.IsValid){
+                _context.Add(r);
+                _context.SaveChanges();
+                TempData["mensaje"] = "Reseña Comentada";
+                return RedirectToAction("Experiencias", "Home");
+            }
+                return View(r);
         }
     }
 }

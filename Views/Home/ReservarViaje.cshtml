@@ -14,11 +14,15 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Sexo</label>
-            <input asp-for="Sexo" class="form-control" id="exampleInputPassword1" placeholder="Sexo">
+            <select asp-for="Sexo" class="form-control">
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Edad</label>
             <input asp-for="Edad" class="form-control" id="exampleInputPassword1" placeholder="Edad">
+            <small id="emailHelp" class="form-text text-muted">Edad en Años(Solo mayores a 1 año)</small>
         </div>
         <div class="form-group">
         <label for="exampleInputPassword1">Foto</label>

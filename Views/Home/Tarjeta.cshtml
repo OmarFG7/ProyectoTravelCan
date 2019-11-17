@@ -1,0 +1,36 @@
+@model Tarjeta
+
+    <h1>Datos de la Tarjeta</h1>
+  
+        <div class="row">
+            <div class="col-sm-6">
+    <form action="" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+          <label asp-for="NumeroTarjeta"></label>
+          <input asp-for="NumeroTarjeta" placeholder="Ingrese Numero de Tarjeta" maxlength="16" class="form-control">
+        <div class="form-group">
+          <label asp-for="Mes">MES: </label>
+          <input asp-for="Mes" class="form-control" maxlength="2" placeholder="MM">
+        </div>
+        <div class="form-group">
+            <label asp-for="Año">AÑO:</label>
+            <input asp-for="Año" class="form-control" maxlength="4"  placeholder="YYYY">
+        </div>
+        <div class="form-group">
+            <label asp-for="CVV">CODIGO DE SEGURIDAD:</label>
+            <input asp-for="CVV" class="form-control" maxlength="3" placeholder="CVV">
+        </div>
+        <div class="form-group">
+        <label asp-for="NombreEnTarjeta">NOMBRE EN LA TARJETA: </label>
+        <input asp-for="NombreEnTarjeta" class="form-control" placeholder="Nombre en la Tarjeta">
+        </div>
+        <button type="submit" class="btn btn-success">TERMINAR</button>
+</form>
+</div>
+</div>
+    <div class="row"> 
+    <div class="col-6">
+        <img src="~/dogwithcreditcard.png" alt="">
+    </div>
+    </div>

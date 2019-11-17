@@ -11,15 +11,13 @@ namespace ProyectoTravelCan.Models
         [Required]
         public string Descripcion  { get; set; }
         [Required]
+        public string DescripcionCompleta  { get; set; }
+        [Required]
         public string nombrePartida { get; set; }
         [Required]
         public string nombreDestino { get; set; }
         [Required]
         public float Costo { get; set; }
         public DateTime Fecha { get; set; }
-        public Viaje (){
-                DateTime Fecha = DateTime.Now;
-
-        }
     }
 }

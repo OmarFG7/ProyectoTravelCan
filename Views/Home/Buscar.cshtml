@@ -1,0 +1,36 @@
+@model IEnumerable<ProyectoTravelCan.Models.ReservaViaje>
+<br /><br />
+<style>
+    body{
+        background-image: url(https://thumbs.dreamstime.com/b/fondo-para-la-agencia-de-viajes-94062071.jpg);
+        text-align: center;
+        align-items: center;
+    }
+</style>
+          
+@if (Model.Count() == 0)
+  {
+    <figure class="figure">
+      <figcaption class="figure-caption, bg danger" style="color: red;">No tiene viajes reservado o inserto mal su correo electronico</figcaption>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRsoJwo2Y4oR9QTNBXHhlJH7Vs1QApWwmW8X2BZ34yHLxg3nHQ_" class="figure-img img-fluid rounded" alt="...">
+    
+    </figure>
+  }else{
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT5TfELX9vCvHSc_DWN33978S-THP3omofYrzaaeT1ToZTpd8B-" width="200" height="120" class="rounded-pill">
+                  
+    <div class="card" style="width: 70rem;">
+      <div class="card-header">
+        Sus Datos
+    </div>
+    @foreach (var v in Model)
+          {
+          <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">Numero de Orden: <p>@v.IdCliente</p></li>
+            <li class="list-group-item">Codigo de viaje: <p>@v.IdViaje</p> </li>
+            <li class="list-group-item">Fecha de Registro: <p>@v.Fecha</p></li>
+                
+          </ul>
+          }
+    </div>
+} 

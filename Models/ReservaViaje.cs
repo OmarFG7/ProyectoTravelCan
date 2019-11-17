@@ -20,7 +20,8 @@ namespace ProyectoTravelCan.Models
                 Fecha = DateTime.Now;
 
         }
-        
+        public Cliente clientes {get;set;}
+        public int? clientesId  {get;set;}
 
     }
     

@@ -1,5 +1,9 @@
 @model LoginViewModel
-
+@if (TempData["mensaje"] != null) {
+    <div class="alert alert-success">
+        @TempData["mensaje"]
+    </div>
+}
 <h1>Iniciar sesión</h1>
 
 <form method="post">

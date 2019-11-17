@@ -10,6 +10,7 @@ namespace ProyectoTravelCan.Models
         public DbSet<Viaje> Viajes {get;set;}
         public DbSet<ReservaViaje> Reservas {get;set;}
         public DbSet<Reseña> Reseñas {get;set;}
+        public DbSet<Tarjeta> Tarjetas {get;set;}
 
         public Contexto(DbContextOptions<Contexto> o) : base(o){
 

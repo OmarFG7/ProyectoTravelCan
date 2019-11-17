@@ -12,10 +12,6 @@ namespace ProyectoTravelCan.Models
 
         [Required]
         public DateTime FechaNacimiento { get; set; }
-            public Cliente (){
-                DateTime FechaNacimiento = DateTime.Now;
-
-            }
 
         [Required]
         public string Celular { get; set; }

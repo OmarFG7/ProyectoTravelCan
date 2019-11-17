@@ -1,0 +1,43 @@
+@model RegistroVistaModelo
+<style>
+  table{
+    text-align: center;
+  }
+</style>
+<div style="background-color: whitesmoke;">
+<h2 style="font-family:fantasy; text-align: center;">Lista de CLientes</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2">Datos del Cliente</th>
+      <th colspan="2">Datos del Viaje</th>
+      <th colspan="2">Datos de la Mascota</th>
+    </tr>
+    <tr>
+      <th scope="col">Nro</th>
+      <th scope="col">Id Cliente</th>
+      <th scope="col">Nombre Cliente</th>
+      <th scope="col">Id Viaje</th>
+      <th scope="col">Fecha De Viaje</th>
+      <th scope="col">Nombre De Mascota</th>
+      <th scope="col">Foto</th>
+    </tr>
+  </thead>
+    <tbody>
+      @foreach (var r in Model.Reservas)
+          {
+        <tr>
+              <th scope="row">@r.IdCliente </th>
+              <td>@r.IdCliente</td>
+              <td>@r.clientes.Nombres</td>
+              <td>@r.IdViaje</td>
+              <td>@r.Fecha</td>
+              <td>@r.clientes.perro.NombreMascota</td>  
+              <td><img src="@r.clientes.perro.Foto" height="90" width="70" ></td>  
+        </tr>
+         }
+    </tbody>
+</table>
+
+</div>

@@ -5,24 +5,27 @@
 }
 <div class="form-group">
     <form action="" method="post">
-    <label>Seleccione el Viaje</label>
-    <select asp-for="IdViaje" class="form-control">
-            @foreach(var v in Viajes){
-                <option value="@v.Id">@v.Descripcion</option>
-            }
-    </select>
+        <label>Seleccione el Viaje</label>
+        <select asp-for="IdViaje" class="form-control">
+                @foreach(var v in Viajes){
+                    <option value="@v.Id">@v.Descripcion</option>
+                }
+        </select>
 
-    <label>Seleccione su numero de orden</label>
-    @foreach(var c in Clientes.Where(x=>x.Id == Clientes.Count)){
-        <p>Usted es el numero: @c.Id</p>
-        }
-    <select asp-for="IdCliente" class="form-control">
-            @foreach(var c in Clientes.Where(x=>x.Id == Clientes.Count)){
-                <option value="@c.Id">@c.Id</option>
+        <label>Seleccione su numero de orden</label>
+        @foreach(var c in Clientes.Where(x=>x.Id == Clientes.Count)){
+            <p>Usted es el numero: @c.Id</p>
             }
-    </select>
-    <button type="submit" class="btn btn-success">Enviar</button>
-</form>
+        <select asp-for="IdCliente" class="form-control">
+                @foreach(var c in Clientes.Where(x=>x.Id == Clientes.Count)){
+                    <option value="@c.Id">@c.Id</option>
+                }
+        </select>
+        @foreach(var c in Clientes.Where(x=>x.Id == Clientes.Count)){
+            <input type="hidden" asp-for="clientesId" value="@c.Id">
+        }
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
 </div>
 @foreach(var c in Clientes.Where(x=>x.Id == Clientes.Count)){
     <a asp-action="cancelar" asp-route-codigo="@c.Id" class="btn-danger btn-lg">Cancelar Reserva</a>

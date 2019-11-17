@@ -237,7 +237,11 @@ namespace ProyectoTravelCan.Migrations
 
                     b.Property<DateTime>("Fecha");
 
+                    b.Property<int?>("clientesId");
+
                     b.HasKey("IdCliente", "IdViaje");
+
+                    b.HasIndex("clientesId");
 
                     b.ToTable("Reservas");
                 });
@@ -258,6 +262,27 @@ namespace ProyectoTravelCan.Migrations
                     b.ToTable("Reseñas");
                 });
 
+            modelBuilder.Entity("ProyectoTravelCan.Models.Tarjeta", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Año");
+
+                    b.Property<int>("CVV");
+
+                    b.Property<int>("Mes");
+
+                    b.Property<string>("NombreEnTarjeta")
+                        .IsRequired();
+
+                    b.Property<int>("NumeroTarjeta");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tarjetas");
+                });
+
             modelBuilder.Entity("ProyectoTravelCan.Models.Viaje", b =>
                 {
                     b.Property<int>("Id")
@@ -266,6 +291,9 @@ namespace ProyectoTravelCan.Migrations
                     b.Property<float>("Costo");
 
                     b.Property<string>("Descripcion")
+                        .IsRequired();
+
+                    b.Property<string>("DescripcionCompleta")
                         .IsRequired();
 
                     b.Property<DateTime>("Fecha");
@@ -334,6 +362,13 @@ namespace ProyectoTravelCan.Migrations
                     b.HasOne("ProyectoTravelCan.Models.Perro", "perro")
                         .WithMany()
                         .HasForeignKey("PerroId");
+                });
+
+            modelBuilder.Entity("ProyectoTravelCan.Models.ReservaViaje", b =>
+                {
+                    b.HasOne("ProyectoTravelCan.Models.Cliente", "clientes")
+                        .WithMany()
+                        .HasForeignKey("clientesId");
                 });
 #pragma warning restore 612, 618
         }
