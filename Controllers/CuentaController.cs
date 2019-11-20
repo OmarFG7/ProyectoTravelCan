@@ -101,7 +101,12 @@ namespace PortalNoticias.Controllers
                 _context.Add(r);
                 _context.SaveChanges();
                 TempData["mensaje"] = "Reseña Comentada";
-                return RedirectToAction("Experiencias", "Home");
+                if(User.Identity.IsAuthenticated){
+                    return RedirectToAction("RegistrarExperiencia", "Cuenta");
+                }else{
+                    return RedirectToAction("Experiencias", "Home");
+                }
+                
             }
                 return View(r);
         }

@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luis\\Documents\\Multiplataforma\\.Net\\ProyectoTravelCan\\ProyectoTravelCan\\ProyectoTravelCan.csproj": {}
+    "C:\\Users\\alumno\\Downloads\\ProyectoTravelCan\\ProyectoTravelCan\\ProyectoTravelCan.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luis\\Documents\\Multiplataforma\\.Net\\ProyectoTravelCan\\ProyectoTravelCan\\ProyectoTravelCan.csproj": {
+    "C:\\Users\\alumno\\Downloads\\ProyectoTravelCan\\ProyectoTravelCan\\ProyectoTravelCan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luis\\Documents\\Multiplataforma\\.Net\\ProyectoTravelCan\\ProyectoTravelCan\\ProyectoTravelCan.csproj",
+        "projectUniqueName": "C:\\Users\\alumno\\Downloads\\ProyectoTravelCan\\ProyectoTravelCan\\ProyectoTravelCan.csproj",
         "projectName": "ProyectoTravelCan",
-        "projectPath": "C:\\Users\\Luis\\Documents\\Multiplataforma\\.Net\\ProyectoTravelCan\\ProyectoTravelCan\\ProyectoTravelCan.csproj",
-        "packagesPath": "C:\\Users\\Luis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luis\\Documents\\Multiplataforma\\.Net\\ProyectoTravelCan\\ProyectoTravelCan\\obj\\",
+        "projectPath": "C:\\Users\\alumno\\Downloads\\ProyectoTravelCan\\ProyectoTravelCan\\ProyectoTravelCan.csproj",
+        "packagesPath": "C:\\Users\\alumno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alumno\\Downloads\\ProyectoTravelCan\\ProyectoTravelCan\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Luis\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

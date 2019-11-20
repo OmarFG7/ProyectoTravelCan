@@ -73,7 +73,8 @@
               
               <img src="@v.Foto" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">@v.Descripcion  <a asp-action="Detalle" asp-route-codigo="@v.Id" class="btn-primary btn-lg">Más Detalle</a> </h5>
+                <h5 class="card-title">@v.Descripcion   </h5>
+                <a asp-action="Detalle" asp-route-codigo="@v.Id" class="btn-primary btn-lg" style="height: 10; width: 10;">Más Detalle</a>
                 <p class="card-text">Precio:S/.@v.Costo por persona</p>
               </div>
               <ul class="list-group list-group-flush">
