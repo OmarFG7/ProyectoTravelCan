@@ -102,7 +102,7 @@ namespace ProyectoTravelCan.Controllers
             if(ModelState.IsValid){
                 _c.Add(t);
                 _c.SaveChanges();
-                TempData["mensaje"] = "El Registro Fue Registrado Exitosamente";
+                TempData["mensaje"] = "La Reserva fue registrada satisfactoriamente";
                 return RedirectToAction("Index");
                 
                 }
@@ -116,5 +116,6 @@ namespace ProyectoTravelCan.Controllers
             
         }
 
+        
     }
 }
